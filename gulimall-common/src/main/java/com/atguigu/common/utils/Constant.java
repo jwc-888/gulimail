@@ -6,11 +6,16 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.utils;
-
-import io.renren.common.validator.group.AliyunGroup;
-import io.renren.common.validator.group.QcloudGroup;
-import io.renren.common.validator.group.QiniuGroup;
+package com.atguigu.common.utils;
+import com.atguigu.common.validator.group.AddGroup;
+import com.atguigu.common.validator.group.UpdateGroup;
+//import com.atguigu.common.validator.group.UpdateStatusGroup;
+import com.atguigu.common.validator.group.AliyunGroup;
+import com.atguigu.common.validator.group.QcloudGroup;
+import com.atguigu.common.validator.group.QiniuGroup;
+//import io.renren.common.validator.group.AliyunGroup;
+//import io.renren.common.validator.group.QcloudGroup;
+//import io.renren.common.validator.group.QiniuGroup;
 
 import java.util.Optional;
 import java.util.stream.Stream;

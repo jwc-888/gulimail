@@ -1,0 +1,28 @@
+spring:
+    datasource:
+        druid:
+            username: root
+            password: jwc
+            url: jdbc:mysql://100.85.14.120:3307/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+            driver-class-name: com.mysql.jdbc.Driver
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 10.194.189.67:8848
+            config:
+                server-addr: 10.194.189.67:8848
+                file-extension: properties # 和 Nacos 配置后缀一致
+        loadbalancer:
+            ribbon:
+                enabled: false  # 彻底关闭 Ribbon
+    application:
+        name: gulimall-coupon
+
+mybatis-plus:
+    mapper-locations: classpath:/mapper/**/*.xml
+    global-config:
+        db-config:
+            id-type: auto
+
+server:
+    port: 8002
