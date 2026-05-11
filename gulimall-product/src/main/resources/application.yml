@@ -1,25 +1,51 @@
 spring:
   datasource:
-    druid:
-      username: root
-      password: jwc
-      url: jdbc:mysql://100.85.14.120:3307/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: jwc
+    url: jdbc:mysql://100.85.14.120:3307/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
   cloud:
     nacos:
+      # 服务发现（正确层级）
       discovery:
-        server-addr: 10.194.189.67:8848
+        server-addr: 127.0.0.1:8848
+      # 配置中心（正确层级！和 discovery 平级）
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+
+    alicloud:
+      access-key-secret: VeIDTWjIFfUYxTZczle0DrY8012QKa
+      access-key-id: LTAI5t8cqu5anax4FJaNFBGB
+      oss:
+        endpoint: oss-cn-guangzhou.aliyuncs.com
+
     loadbalancer:
       ribbon:
-        enabled: false  # 彻底关闭 Ribbon
+        enabled: false
+
+#  redis:
+#    host: 100.85.14.120
+#    port: 6379
+
   application:
     name: gulimall-product
+
+  main:
+    allow-circular-references: true
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  level:
+    com.atguigu.gulimall: debug
 
 server:
-    port:8004
+  port: 8004

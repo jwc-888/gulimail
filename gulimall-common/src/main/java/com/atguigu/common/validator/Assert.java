@@ -9,7 +9,7 @@
 package com.atguigu.common.validator;
 import com.atguigu.common.utils.Constant;
 
-import io.renren.common.exception.RRException;
+import com.atguigu.common.Exception.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**

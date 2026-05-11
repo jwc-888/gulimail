@@ -8,7 +8,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.194.189.67:8848
+        server-addr: 127.0.0.1:8848
     loadbalancer:
       ribbon:
         enabled: false  # 彻底关闭 Ribbon
@@ -22,4 +22,4 @@ mybatis-plus:
       id-type: auto
 
 server:
-  port:8001
+  port:8006

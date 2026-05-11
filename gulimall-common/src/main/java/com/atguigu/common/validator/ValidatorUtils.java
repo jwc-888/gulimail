@@ -8,8 +8,8 @@
 
 package com.atguigu.common.validator;
 
-import io.renren.common.exception.RRException;
-import io.renren.common.utils.Constant;
+import com.atguigu.common.utils.Constant;
+import com.atguigu.common.Exception.RRException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
