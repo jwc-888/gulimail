@@ -11,6 +11,7 @@ import com.atguigu.common.utils.Query;
 import com.atguigu.gulimall.coupon.dao.SpuBoundsDao;
 import com.atguigu.gulimall.coupon.entity.SpuBoundsEntity;
 import com.atguigu.gulimall.coupon.service.SpuBoundsService;
+import org.springframework.util.StringUtils;
 
 
 @Service("spuBoundsService")
@@ -18,9 +19,18 @@ public class SpuBoundsServiceImpl extends ServiceImpl<SpuBoundsDao, SpuBoundsEnt
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+
+        QueryWrapper<SpuBoundsEntity> queryWrapper = new QueryWrapper<>();
+
+        String key = (String) params.get("key");
+
+        if (!StringUtils.isEmpty(key)) {
+            queryWrapper.eq("id",key).or().eq("sku_id",key);
+        }
+
         IPage<SpuBoundsEntity> page = this.page(
                 new Query<SpuBoundsEntity>().getPage(params),
-                new QueryWrapper<SpuBoundsEntity>()
+                queryWrapper
         );
 
         return new PageUtils(page);

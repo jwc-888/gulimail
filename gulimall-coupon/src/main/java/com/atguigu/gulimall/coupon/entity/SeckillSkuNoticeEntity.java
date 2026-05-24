@@ -22,31 +22,31 @@ public class SeckillSkuNoticeEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * member_id
 	 */
-private Long memberId;
+	private Long memberId;
 	/**
 	 * sku_id
 	 */
-private Long skuId;
+	private Long skuId;
 	/**
 	 * 活动场次id
 	 */
-private Long sessionId;
+	private Long sessionId;
 	/**
 	 * 订阅时间
 	 */
-private Date subcribeTime;
+	private Date subcribeTime;
 	/**
 	 * 发送时间
 	 */
-private Date sendTime;
+	private Date sendTime;
 	/**
 	 * 通知方式[0-短信，1-邮件]
 	 */
-private Integer noticeType;
+	private Integer noticeType;
 
 }

@@ -1,10 +1,12 @@
+server:
+  port:8005
+
 spring:
   datasource:
-    druid:
-      username: root
-      password: jwc
-      url: jdbc:mysql://100.85.14.120:3307/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: jwc
+    url: jdbc:mysql://100.85.14.120:3307/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
@@ -15,11 +17,26 @@ spring:
   application:
     name: gulimall-ware
 
+feign:
+  sentinel:
+    enabled: true
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+logging:
+  level:
+    com.com.atguigu.gulimall: debug
 
-server:
-    port:8005
+#暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

@@ -1,10 +1,9 @@
 spring:
   datasource:
-    druid:
-      username: root
-      password: jwc
-      url: jdbc:mysql://100.85.14.120:3307/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: jwc
+    url: jdbc:mysql://100.85.14.120:3307/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
@@ -12,14 +11,41 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false  # 彻底关闭 Ribbon
+
+  redis:
+    host: 100.85.14.120
+    port: 6379
+
   application:
     name: gulimall-member
 
+#开启feign对sentinel的支持
+feign:
+  sentinel:
+    enabled: true
+
+  application:
+    name: gulimall-member
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  session:
+    store-type: redis
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
+
   global-config:
     db-config:
       id-type: auto
 
 server:
-  port:8006
+  port: 8006
+
+#暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

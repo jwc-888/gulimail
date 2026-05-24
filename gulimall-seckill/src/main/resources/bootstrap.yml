@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gulimall-seckill
+
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 79dfef75-d6d6-42a5-8bd6-9fc744a804fa

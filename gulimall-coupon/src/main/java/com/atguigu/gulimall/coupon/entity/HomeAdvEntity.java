@@ -22,51 +22,51 @@ public class HomeAdvEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * 名字
 	 */
-private String name;
+	private String name;
 	/**
 	 * 图片地址
 	 */
-private String pic;
+	private String pic;
 	/**
 	 * 开始时间
 	 */
-private Date startTime;
+	private Date startTime;
 	/**
 	 * 结束时间
 	 */
-private Date endTime;
+	private Date endTime;
 	/**
 	 * 状态
 	 */
-private Integer status;
+	private Integer status;
 	/**
 	 * 点击数
 	 */
-private Integer clickCount;
+	private Integer clickCount;
 	/**
 	 * 广告详情连接地址
 	 */
-private String url;
+	private String url;
 	/**
 	 * 备注
 	 */
-private String note;
+	private String note;
 	/**
 	 * 排序
 	 */
-private Integer sort;
+	private Integer sort;
 	/**
 	 * 发布者
 	 */
-private Long publisherId;
+	private Long publisherId;
 	/**
 	 * 审核者
 	 */
-private Long authId;
+	private Long authId;
 
 }

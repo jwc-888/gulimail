@@ -23,23 +23,23 @@ public class SkuFullReductionEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * spu_id
 	 */
-private Long skuId;
+	private Long skuId;
 	/**
 	 * 满多少
 	 */
-private BigDecimal fullPrice;
+	private BigDecimal fullPrice;
 	/**
 	 * 减多少
 	 */
-private BigDecimal reducePrice;
+	private BigDecimal reducePrice;
 	/**
 	 * 是否参与其他优惠
 	 */
-private Integer addOther;
+	private Integer addOther;
 
 }

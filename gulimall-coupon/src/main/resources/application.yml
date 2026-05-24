@@ -1,10 +1,9 @@
 spring:
     datasource:
-        druid:
-            username: root
-            password: jwc
-            url: jdbc:mysql://100.85.14.120:3307/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-            driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: jwc
+        url: jdbc:mysql://100.85.14.120:3307/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+        driver-class-name: com.mysql.cj.jdbc.Driver
     cloud:
         nacos:
             discovery:
@@ -23,6 +22,17 @@ mybatis-plus:
     global-config:
         db-config:
             id-type: auto
+
+feign:
+    sentinel:
+        enabled: true
+
+#暴露所有端点
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
 
 server:
     port: 8002

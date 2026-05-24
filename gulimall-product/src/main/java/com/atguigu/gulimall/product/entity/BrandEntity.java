@@ -4,6 +4,7 @@ import com.atguigu.common.valid.AddGroup;
 import com.atguigu.common.valid.ListValue;
 import com.atguigu.common.valid.UpdateGroup;
 import com.atguigu.common.valid.UpdateStatusGroup;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -29,7 +30,7 @@ public class BrandEntity implements Serializable {
 	 */
 	@NotNull(message = "修改必须指定品牌id",groups = {UpdateGroup.class})
 	@Null(message = "新增不能指定id",groups = {AddGroup.class})
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long brandId;
 	/**
 	 * 品牌名

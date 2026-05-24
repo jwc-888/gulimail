@@ -22,23 +22,23 @@ public class HomeSubjectSpuEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * 专题名字
 	 */
-private String name;
+	private String name;
 	/**
 	 * 专题id
 	 */
-private Long subjectId;
+	private Long subjectId;
 	/**
 	 * spu_id
 	 */
-private Long spuId;
+	private Long spuId;
 	/**
 	 * 排序
 	 */
-private Integer sort;
+	private Integer sort;
 
 }

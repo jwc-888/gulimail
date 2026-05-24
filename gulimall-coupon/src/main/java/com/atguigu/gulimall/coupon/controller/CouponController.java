@@ -26,34 +26,17 @@ import com.atguigu.common.utils.R;
  * @email 690684005@qq.com
  * @date 2026-04-23 16:02:13
  */
-@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
 
-    @Value("${coupon.user.name}")
-    private String name;
-    @Value("${coupon.user.age}")
-    private Integer age;
-
-    @RequestMapping("/test")
-    public R test(){
-        return R.ok().put("name", name).put("age", age);
-    }
-
-    @RequestMapping("/member/list")
-    public R memberCoupons(){
-        CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满100减10");
-        return R.ok().put("coupons", Arrays.asList(couponEntity));
-    }
-
     /**
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("coupon:coupon:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = couponService.queryPage(params);
 
@@ -65,8 +48,9 @@ public class CouponController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("coupon:coupon:info")
     public R info(@PathVariable("id") Long id){
-		CouponEntity coupon = couponService.getById(id);
+        CouponEntity coupon = couponService.getById(id);
 
         return R.ok().put("coupon", coupon);
     }
@@ -75,8 +59,9 @@ public class CouponController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("coupon:coupon:save")
     public R save(@RequestBody CouponEntity coupon){
-		couponService.save(coupon);
+        couponService.save(coupon);
 
         return R.ok();
     }
@@ -85,8 +70,9 @@ public class CouponController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("coupon:coupon:update")
     public R update(@RequestBody CouponEntity coupon){
-		couponService.updateById(coupon);
+        couponService.updateById(coupon);
 
         return R.ok();
     }
@@ -95,8 +81,9 @@ public class CouponController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("coupon:coupon:delete")
     public R delete(@RequestBody Long[] ids){
-		couponService.removeByIds(Arrays.asList(ids));
+        couponService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

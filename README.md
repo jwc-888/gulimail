@@ -1,2 +1,10 @@
 # gulimail
 谷粒商城
+注释了文件
+config-
+MyRabbitMQConfig
+MySeataConfig
+StockReleaseListener
+WareSkuServiceImpl
+GulimallWareApplication
+pom.xml

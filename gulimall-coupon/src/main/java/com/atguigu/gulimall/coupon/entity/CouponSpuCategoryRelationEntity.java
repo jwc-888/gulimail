@@ -22,19 +22,19 @@ public class CouponSpuCategoryRelationEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * 优惠券id
 	 */
-private Long couponId;
+	private Long couponId;
 	/**
 	 * 产品分类id
 	 */
-private Long categoryId;
+	private Long categoryId;
 	/**
 	 * 产品分类名称
 	 */
-private String categoryName;
+	private String categoryName;
 
 }

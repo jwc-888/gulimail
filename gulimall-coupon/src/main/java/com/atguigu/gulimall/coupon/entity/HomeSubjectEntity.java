@@ -22,35 +22,35 @@ public class HomeSubjectEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * 专题名字
 	 */
-private String name;
+	private String name;
 	/**
 	 * 专题标题
 	 */
-private String title;
+	private String title;
 	/**
 	 * 专题副标题
 	 */
-private String subTitle;
+	private String subTitle;
 	/**
 	 * 显示状态
 	 */
-private Integer status;
+	private Boolean status;
 	/**
 	 * 详情连接
 	 */
-private String url;
+	private String url;
 	/**
 	 * 排序
 	 */
-private Integer sort;
+	private Integer sort;
 	/**
 	 * 专题图片地址
 	 */
-private String img;
+	private String img;
 
 }

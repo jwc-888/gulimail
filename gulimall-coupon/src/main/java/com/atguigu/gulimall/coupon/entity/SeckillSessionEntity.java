@@ -1,10 +1,13 @@
 package com.atguigu.gulimall.coupon.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
@@ -22,27 +25,30 @@ public class SeckillSessionEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * 场次名称
 	 */
-private String name;
+	private String name;
 	/**
 	 * 每日开始时间
 	 */
-private Date startTime;
+	private Date startTime;
 	/**
 	 * 每日结束时间
 	 */
-private Date endTime;
+	private Date endTime;
 	/**
 	 * 启用状态
 	 */
-private Integer status;
+	private Integer status;
 	/**
 	 * 创建时间
 	 */
-private Date createTime;
+	private Date createTime;
+
+	@TableField(exist = false)
+	private List<SeckillSkuRelationEntity> relationSkus;
 
 }

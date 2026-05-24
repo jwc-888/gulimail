@@ -22,31 +22,31 @@ public class SeckillPromotionEntity implements Serializable {
 	/**
 	 * id
 	 */
-@TableId
-private Long id;
+	@TableId
+	private Long id;
 	/**
 	 * 活动标题
 	 */
-private String title;
+	private String title;
 	/**
 	 * 开始日期
 	 */
-private Date startTime;
+	private Date startTime;
 	/**
 	 * 结束日期
 	 */
-private Date endTime;
+	private Date endTime;
 	/**
 	 * 上下线状态
 	 */
-private Integer status;
+	private Integer status;
 	/**
 	 * 创建时间
 	 */
-private Date createTime;
+	private Date createTime;
 	/**
 	 * 创建人
 	 */
-private Long userId;
+	private Long userId;
 
 }
